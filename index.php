@@ -21,22 +21,22 @@
                 case 'celsius':
                     $fahrenheit=$inputTemp*9/5+32;
                     $kelvin=$inputTemp+273.15;
-                    echo '<p style="text-align:center;">Degrees Fahrenheit: ' . $fahrenheit . '<BR />'; 
-                    echo $kelvin . '<BR />'; 
+                    echo '<p style="text-align:center;">' . $fahrenheit . '&#176 Fahrenheit<BR />'; 
+                    echo $kelvin . '&#176 Kelvin<BR />'; 
                     echo '<a href="">Do another calculation</a></p>';
                     break;
                 case 'fahrenheit':
                     $celsius=5/9*($inputTemp-32);
                     $kelvin=$inputTemp + 273.15;
-                    echo '<p style="text-align:center;">' . $celsius . '<BR />'; 
-                    echo $kelvin . '<BR />'; 
+                    echo '<p style="text-align:center;">' . $celsius . '&#176 Celsius<BR />'; 
+                    echo $kelvin . '&#176 Kelvin<BR />'; 
                     echo '<a href="">Do another calculation</a></p>';
                     break;
                 case 'kelvin':
                     $fahrenheit=9/5*($inputTemp-273.15)+32;
                     $celsius=$inputTemp-273.15;
-                    echo '<p style="text-align:center;">' . $fahrenheit . '<BR />'; 
-                    echo $celsius . '<BR />'; 
+                    echo '<p style="text-align:center;">' . $fahrenheit . '&#176 Fahrenheit<BR />'; 
+                    echo $celsius . '&#176 Celsius<BR />'; 
                     echo '<a href="">Do another calculation</a></p>';
                     break;    
                 default:
