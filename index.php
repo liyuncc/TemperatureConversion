@@ -13,7 +13,7 @@
         $inputTemp=$_POST["inputValue"];
         if (!is_numeric($inputTemp)) 
         {//issue error response
-            echo '<p style="text-align:center;">Input value should be valid number.<BR />';  
+            echo '<p style="text-align:center;">Input value should be a valid number.<BR />';  
             echo '<a href="">Do another calculation</a></p>';
         } else {
             switch($_POST["inputType"]) 
@@ -21,32 +21,33 @@
                 case 'celsius':
                     $fahrenheit=$inputTemp*9/5+32;
                     $kelvin=$inputTemp+273.15;
-                    echo '<p style="text-align:center;">' . $fahrenheit . '&#176 Fahrenheit<BR />'; 
-                    echo $kelvin . '&#176 Kelvin<BR />'; 
+                    echo '<p style="text-align:center;">' . number_format($fahrenheit,2). '&#176 Fahrenheit<BR />'; 
+                    echo number_format($kelvin,2) . '&#176 Kelvin<BR />'; 
                     echo '<a href="">Do another calculation</a></p>';
                     break;
                 case 'fahrenheit':
                     $celsius=5/9*($inputTemp-32);
                     $kelvin=$inputTemp + 273.15;
-                    echo '<p style="text-align:center;">' . $celsius . '&#176 Celsius<BR />'; 
-                    echo $kelvin . '&#176 Kelvin<BR />'; 
+                    echo '<p style="text-align:center;">' . number_format($celsius,2) . '&#176 Celsius<BR />'; 
+                    echo number_format($kelvin,2) . '&#176 Kelvin<BR />'; 
                     echo '<a href="">Do another calculation</a></p>';
                     break;
                 case 'kelvin':
                     $fahrenheit=9/5*($inputTemp-273.15)+32;
                     $celsius=$inputTemp-273.15;
-                    echo '<p style="text-align:center;">' . $fahrenheit . '&#176 Fahrenheit<BR />'; 
-                    echo $celsius . '&#176 Celsius<BR />'; 
+                    echo '<p style="text-align:center;">' . number_format($fahrenheit,2) . '&#176 Fahrenheit<BR />'; 
+                    echo number_format($celsius,2) . '&#176 Celsius<BR />'; 
                     echo '<a href="">Do another calculation</a></p>';
                     break;    
                 default:
-                    echo '<p style="text-align:center;">Fatal Error</p>';
+                    echo '<p style="text-align:center;">Something goes wrong....</p>';
+                    echo '<a href="">Try again!</a></p>';
                     die();
             }
         }
     } else {//show a form
         echo '
-                <form action="" method="post" name="TempCalc" id="tempCalcForm">                	
+                <form action="index.php" method="post" name="TempCalc" id="tempCalcForm">                	
                     <div style="text-align:center;">
                         <div style="display:inline;"><input type="text" name="inputValue" placeholder="e.g. 32" size="12" style="height:22px;display:inline;"></div>
                         <div style="display:inline;">
