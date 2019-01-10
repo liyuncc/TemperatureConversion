@@ -21,7 +21,7 @@
                 case 'celsius':
                     $fahrenheit=$inputTemp*9/5+32;
                     $kelvin=$inputTemp+273.15;
-                    echo '<p style="text-align:center;">' . $fahrenheit . '<BR />'; 
+                    echo '<p style="text-align:center;">Degrees Fahrenheit: ' . $fahrenheit . '<BR />'; 
                     echo $kelvin . '<BR />'; 
                     echo '<a href="">Do another calculation</a></p>';
                     break;
